@@ -26,15 +26,18 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG=True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///'+ \
+            os.path.join(basedir,'{}'.format('mb_dev.sqlite'))
 
 
 class ProductionConfig(Config):
     DEBUG=False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_prod.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///'+ \
+            os.path.join(basedir,'{}'.format('mb_prod.sqlite'))
 
 class TestingConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_test.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///'+ \
+            os.path.join(basedir,'{}'.format('mb_test.sqlite'))
     DEBUG=True
     TESTING=True
     FLASK_COVERAGE = 1

@@ -1,6 +1,6 @@
 before_script:
   - apt-get update -qy
-  - apt-get install -qy python python-dev python-pip sqlite
+  - apt-get install -qy python python-dev python-pip sqlite3 libsqlite3-dev python-virtualenv
   - virtualenv -p /usr/bin/python3.4 venv
   - source venv/bin/activate
   - pip install -r requirements.txt
@@ -9,4 +9,4 @@ before_script:
 
 test:
   script:
-    - gunicorn --bind localhost:8000 wsgi 
+    - nosetests --with-coverage --cover-erase --cover-package=app
