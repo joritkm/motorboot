@@ -9,7 +9,7 @@ before_script:
 
 test:
   script:
-    - nosetests
+    - nosetests --with-coverage --cover-erase
 
 gunicorn:
   script:
