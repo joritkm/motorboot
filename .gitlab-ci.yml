@@ -9,4 +9,9 @@ before_script:
 
 test:
   script:
-    - gunicorn --bind localhost:8000 wsgi 
+    - nosetests
+
+gunicorn:
+  script:
+    - gunicorn --bind localhost:8000 wsgi
+    - killall gunicorn
