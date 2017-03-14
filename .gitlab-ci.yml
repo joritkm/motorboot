@@ -5,3 +5,7 @@ before_script:
   - pip install -r requirements.txt
   - pip install codeclimate-test-reporter nose
   - source make_env
+
+test:
+  script:
+    - gunicorn --bind localhost:8000 wsgi 

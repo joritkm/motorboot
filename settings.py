@@ -14,7 +14,6 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
 
     BOOTFILES = os.path.abspath(os.environ.get('BOOTFILES'))
     if not os.path.exists(BOOTFILES):
@@ -27,12 +26,15 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG=True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_dev.sqlite')
 
 
 class ProductionConfig(Config):
     DEBUG=False
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_prod.sqlite')
 
 class TestingConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format('mb_test.sqlite')
     DEBUG=True
     TESTING=True
     FLASK_COVERAGE = 1
