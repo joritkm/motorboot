@@ -8,6 +8,4 @@ venv
 *.sqlite
 *.swp
 *.pid
-.mailapikey
-uploads
 *.log

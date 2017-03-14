@@ -1,9 +1,7 @@
-script:
-    - apt-get update -qy
-    - apt-get install -y python python-dev python-pip sqlite
-    - source venv/bin/activate
-    - pip install -r requirements.txt
-    - pip install codeclimate-test-reporter nose
-    - source make_env
-    - python manage.py test
-    - codeclimate-test-reporter
+before_script:
+  - apt-get update -qy
+  - apt-get install -qy python python-dev python-pip sqlite
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+  - pip install codeclimate-test-reporter nose
+  - source make_env

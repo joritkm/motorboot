@@ -4,3 +4,5 @@
 
 export FLASK_APP_MODE=default
 export FLASK_COVERAGE=0
+export SQLALCHEMY_DATABASE_URI=sqlite:///motorboot_dev.sqlite
+export BOOTFILES=bootfiles
