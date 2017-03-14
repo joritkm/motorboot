@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Set environment variables for poolparty application
+
+export FLASK_APP_MODE=default
+export FLASK_COVERAGE=0
