@@ -13,5 +13,5 @@ test:
 
 gunicorn:
   script:
-    - gunicorn --bind localhost:8000 wsgi
-    - killall gunicorn
+    - gunicorn --bind localhost:8000 wsgi &
+    - sleep 10 && killall gunicorn
