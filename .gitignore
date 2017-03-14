@@ -1,0 +1,13 @@
+venv
+.env
+.key
+/.Python
+/__pycache__
+*.pyc
+*.pyo
+*.sqlite
+*.swp
+*.pid
+.mailapikey
+uploads
+*.log
