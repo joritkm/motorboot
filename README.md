@@ -1,5 +1,5 @@
 ## motorboot
-####Small utility api for storing and querying bootconfigurations.
+#### Small utility api for storing and querying bootconfigurations.
 
 #### Requirements:
 
