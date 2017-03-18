@@ -21,11 +21,13 @@ def create_app(cnf=None):
     db.init_app(app)
 
     if not app.debug:
-        loghandler = RotatingFileHandler(app.config['LOGPATH'] +\
-                                         'motorboot.log',
-                                         maxBytes=10000,
-                                         backupCount=2
+        loghandler = RotatingFileHandler(app.config['LOGFILE'],
+                                         maxBytes=5*1024,
+                                         backupCount=3
                                         )
+        file_handler.setFormatter(logging.Formatter('%(asctime)s \
+                                                    %(levelname)s: \
+                                                    %(message)s [in %(pathname)s:%(lineno)d]'))
         loghandler.setLevel(logging.INFO)
         app.logger.addHandler(loghandler)
 

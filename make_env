@@ -7,3 +7,4 @@ export FLASK_APP_KEY=toomanysecrets
 export FLASK_APP_LOGDIR=default
 export FLASK_COVERAGE=0
 export BOOTFILES=bootfiles
+export APPSECRETS=.secrets.yml

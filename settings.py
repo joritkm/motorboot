@@ -7,6 +7,7 @@ Settings for motorboot app
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config:
     APP_MODE = os.environ.get('FLASK_APP_MODE',
                               'default')
@@ -18,8 +19,11 @@ class Config:
         LOGPATH = os.path.join(basedir,'logs')
     else:
         LOGPATH = os.path.abspath(LOGPATH)
-        if not os.path.exists(LOGPATH):
-            os.mkdir(LOGPATH)
+    if not os.path.exists(LOGPATH):
+        os.mkdir(LOGPATH)
+    LOGFILE = os.path.join(LOGPATH,
+                           'motorboot_{}.log'.format(APP_MODE)
+                          )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
@@ -27,6 +31,8 @@ class Config:
     BOOTFILES = os.path.abspath(os.environ.get('BOOTFILES'))
     if not os.path.exists(BOOTFILES):
         os.mkdir(BOOTFILES)
+
+    SECRETSFILE = os.path.abspath(os.environ.get('APPSECRETS'))
 
     @staticmethod
     def init_app(app):
@@ -49,6 +55,7 @@ class TestingConfig(Config):
             os.path.join(basedir,'{}'.format('mb_test.sqlite'))
     DEBUG=True
     TESTING=True
+    SERVER_NAME='motorboot_test'
     FLASK_COVERAGE = 1
 
 
