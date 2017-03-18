@@ -8,9 +8,18 @@ Settings for motorboot app
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    APP_MODE = os.environ.get('FLASK_APP_MODE', 'default')
-
-    SECRET_KEY= os.environ.get('MOTORBOOT_APPKEY', 'toomanysecrets')
+    APP_MODE = os.environ.get('FLASK_APP_MODE',
+                              'default')
+    SECRET_KEY= os.environ.get('FLASK_APP_KEY',
+                               'default')
+    LOGPATH = os.environ.get('FLASK_APP_LOGDIR',
+                             'default')
+    if LOGPATH == 'default':
+        LOGPATH = os.path.join(basedir,'logs')
+    else:
+        LOGPATH = os.path.abspath(LOGPATH)
+        if not os.path.exists(LOGPATH):
+            os.mkdir(LOGPATH)
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True

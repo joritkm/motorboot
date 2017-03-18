@@ -1,8 +1,8 @@
 import logging
-import sys
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.contrib.fixers import ProxyFix
+from logging.handlers import RotatingFileHandler
 from settings import config
 
 db = SQLAlchemy()
@@ -19,20 +19,20 @@ def create_app(cnf=None):
         config[cnf].init_app(app)
 
     db.init_app(app)
-    if app.config['APP_MODE'] == 'production':
-        log = logging.getLogger('wekzeug')
-        log.setLevel(logging.INFO)
-        loghandler = logging.StreamHandler(sys.stdout)
+
+    if not app.debug:
+        loghandler = RotatingFileHandler(app.config['LOGPATH'] +\
+                                         'motorboot.log',
+                                         maxBytes=10000,
+                                         backupCount=2
+                                        )
         loghandler.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - \
-                                      %(levelname)s - %(message)s')
-        loghandler.setFormatter(formatter)
         app.logger.addHandler(loghandler)
 
     from .bootfiles import bp as bootfiles_blueprint
-    app.register_blueprint(bootfiles_blueprint, url_prefix='/bootfiles')
+    app.register_blueprint(bootfiles_blueprint, url_prefix='/api/v1/bootfiles')
 
     from .bootconf import bp as bootconf_blueprint
-    app.register_blueprint(bootconf_blueprint, url_prefix='/bootconf')
+    app.register_blueprint(bootconf_blueprint, url_prefix='/api/v1/bootconf')
 
     return app
