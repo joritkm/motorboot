@@ -10,9 +10,8 @@
 
 #### Functionality:
 
-* crud records via RESTful API
-* provide resources for ipxe-clients
-* watch boot-resource directory for new files
-* authenticate via token
-* perhaps, maybe serve as backend for dynamic inventory
-
+- [x] crud records via RESTful API
+- [x] provide resources for ipxe-clients
+- [ ] watch boot-resource directory for new files
+- [x] authenticate via token
+- [ ] perhaps, maybe serve as backend for dynamic inventory
