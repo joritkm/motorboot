@@ -32,7 +32,9 @@ def create_app(cnf=None):
         app.logger.addHandler(loghandler)
 
     from .bootfiles import bp as bootfiles_blueprint
-    app.register_blueprint(bootfiles_blueprint, url_prefix='/api/v1/bootfiles')
+    app.register_blueprint(bootfiles_blueprint,
+                           url_prefix='/boot'
+                          )
 
     from .bootconf import bp as bootconf_blueprint
     app.register_blueprint(bootconf_blueprint, url_prefix='/api/v1/bootconf')
