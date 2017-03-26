@@ -28,10 +28,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
-    BOOTFILES = os.path.abspath(os.environ.get('BOOTFILES'))
-    if not os.path.exists(BOOTFILES):
-        os.mkdir(BOOTFILES)
-
     SECRETSFILE = os.path.abspath(os.environ.get('APPSECRETS'))
 
     @staticmethod
