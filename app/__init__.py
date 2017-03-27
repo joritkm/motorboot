@@ -25,7 +25,7 @@ def create_app(cnf=None):
                                          maxBytes=5*1024,
                                          backupCount=3
                                         )
-        file_handler.setFormatter(logging.Formatter('%(asctime)s \
+        loghandler.setFormatter(logging.Formatter('%(asctime)s \
                                                     %(levelname)s: \
                                                     %(message)s [in %(pathname)s:%(lineno)d]'))
         loghandler.setLevel(logging.INFO)
