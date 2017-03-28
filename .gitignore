@@ -1,5 +1,6 @@
 venv
 bootfiles
+logs/*
 .env
 .key
 /.Python
