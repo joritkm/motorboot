@@ -1,0 +1,54 @@
+2017-03-28 13:24:39,881                                                     ERROR:                                                     Exception on /boot/query [GET] [in /home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: hosts
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jay/jobstuff/motorboot/app/bootfiles/views.py", line 10, in boot_query
+    host = Host.query.filter_by(hostname=hostname).first_or_404()
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 425, in first_or_404
+    rv = self.first()
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2731, in first
+    ret = list(self[0:1])
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2523, in __getitem__
+    return list(res)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2831, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2854, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/home/jay/jobstuff/motorboot/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: hosts [SQL: 'SELECT hosts.id AS hosts_id, hosts.hostname AS hosts_hostname, hosts.hwaddress AS hosts_hwaddress, hosts.target AS hosts_target \nFROM hosts \nWHERE hosts.hostname IS NULL\n LIMIT ? OFFSET ?'] [parameters: (1, 0)]

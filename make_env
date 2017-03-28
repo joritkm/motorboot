@@ -2,7 +2,7 @@
 
 # Set environment variables for motorboot application
 
-export FLASK_APP_MODE=production
+export FLASK_APP_MODE=default
 export FLASK_APP_KEY=toomanysecrets
 export FLASK_APP_LOGDIR=default
 export FLASK_COVERAGE=0

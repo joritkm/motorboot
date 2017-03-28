@@ -5,4 +5,3 @@ dhcp
 kernel ${base-uri}/linux initrd=initrd.gz initrd=preseed.cfg.cpio
 initrd ${base-uri}/initrd.gz
 initrd ${base-uri}/preseed.cfg.cpio
-boot
