@@ -1,5 +1,5 @@
 venv
-bootfiles
+static/*
 logs/*
 .env
 .key
