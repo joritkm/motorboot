@@ -1,4 +1,6 @@
 ## motorboot
+[![Build Status](https://travis-ci.org/joppich/motorboot.svg?branch=master)](https://travis-ci.org/joppich/motorboot)
+
 #### Small utility api for storing and querying bootconfigurations.
 
 #### Requirements:
