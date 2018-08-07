@@ -20,9 +20,10 @@ install:
   - virtualenv -p /usr/bin/python3.4 venv
   - source venv/bin/activate
   - pip install -r requirements.txt
-  - pip install codeclimate-test-reporter nose
+  - pip install codecov nose
   - source make_env
 
 script:
   - nosetests --with-coverage --cover-erase --cover-package=app
+  - codecov
 
