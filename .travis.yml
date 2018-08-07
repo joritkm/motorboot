@@ -1,0 +1,28 @@
+os: linux
+dist: trusty
+language: python
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+  - "$HOME/.pyenv"
+
+addons:
+  apt:
+    packages:
+      - python
+      - python-dev
+      - python-pip
+      - sqlite3 
+      - libsqlite3-dev
+      - python-virtualenv
+
+install:
+  - virtualenv -p /usr/bin/python3.4 venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+  - pip install codeclimate-test-reporter nose
+  - source make_env
+
+script:
+  - nosetests --with-coverage --cover-erase --cover-package=app
+
