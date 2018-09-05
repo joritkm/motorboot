@@ -1,4 +1,0 @@
-#!ipxe
-set base-uri https://pxe.physik-pool.tu-berlin.de/grml
-initrd ${base-uri}/grml64-nb_xyz.iso
-chain ${base-uri}/memdisk iso
