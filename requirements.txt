@@ -1,4 +1,4 @@
-alembic==1.0.5
+alembic==1.0.8
 aniso8601==6.0.0
 appdirs==1.4.3
 backcall==0.1.0
