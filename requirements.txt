@@ -3,7 +3,7 @@ aniso8601==3.0.2
 appdirs==1.4.3
 backcall==0.1.0
 click==7.0
-coverage==4.5.1
+coverage==4.5.3
 decorator==4.3.0
 Flask==1.0.2
 Flask-HTTPAuth==3.2.4
