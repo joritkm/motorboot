@@ -4,7 +4,7 @@ appdirs==1.4.3
 backcall==0.1.0
 click==7.0
 coverage==4.5.3
-decorator==4.3.0
+decorator==4.4.0
 Flask==1.0.2
 Flask-HTTPAuth==3.2.4
 Flask-Migrate==2.4.0
