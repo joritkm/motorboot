@@ -1,5 +1,6 @@
 ## motorboot
-[![Build Status](https://travis-ci.org/joppich/motorboot.svg?branch=master)](https://travis-ci.org/joppich/motorboot)
+
+[![CircleCI](https://circleci.com/gh/joppich/motorboot/tree/master.svg?style=svg)](https://circleci.com/gh/joppich/motorboot/tree/master)
 [![codecov](https://codecov.io/gh/joppich/motorboot/branch/master/graph/badge.svg)](https://codecov.io/gh/joppich/motorboot)
 #### Small utility api for storing and querying bootconfigurations.
 
