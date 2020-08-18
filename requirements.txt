@@ -6,7 +6,7 @@ Click==7.0
 coverage==5.2
 decorator==4.4.0
 Flask==1.1.2
-Flask-HTTPAuth==3.3.0
+Flask-HTTPAuth==4.1.0
 Flask-Migrate==2.5.3
 Flask-Script==2.0.6
 Flask-SQLAlchemy==2.4.0
