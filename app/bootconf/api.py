@@ -58,14 +58,14 @@ def before_request():
 @bootconf.route('/<string:hostname>')
 def get_host(hostname):
     host_query = Host.query.filter_by(hostname=hostname).first_or_404()
-    result = jsonify(hschema.dump(host_query).data)
+    result = jsonify(hschema.dump(host_query))
     return result, 200
 
 
 @bootconf.route('/list')
 def get_hostlist():
     host_query = Host.query.all()
-    results = jsonify(hschema.dump(host_query, many=True).data)
+    results = jsonify(hschema.dump(host_query, many=True))
     return results, 200
 
 
@@ -86,7 +86,7 @@ def post_host():
                         t = host.target
                        ))
         query = Host.query.get(host.id)
-        results = hschema.dump(query).data
+        results = hschema.dump(query)
         return jsonify(results), 201
     except ValidationError as verr:
         log_error(host,'Adding')

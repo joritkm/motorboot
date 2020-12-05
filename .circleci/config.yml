@@ -31,6 +31,5 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            . make_env
             nosetests --with-coverage --cover-erase --cover-package=app
             codecov

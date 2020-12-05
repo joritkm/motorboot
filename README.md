@@ -6,15 +6,13 @@
 
 #### Requirements:
 
-* python>=3.4
+* python3
 * pip
 * python-virtualenv
 * sqlite
 
 #### Functionality:
 
-- [x] crud records via RESTful API
-- [x] provide resources for ipxe-clients
-- [ ] watch boot-resource directory for new files
-- [x] authenticate via token
-- [ ] perhaps, maybe serve as backend for dynamic inventory
+- crud records via RESTful API
+- provide resources for ipxe-clients
+- authenticate via token

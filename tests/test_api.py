@@ -65,7 +65,7 @@ class APITestCase(unittest.TestCase):
     def get_api_headers(self):
         return {
             'Authorization':
-            'Token topSecret',
+            'Token testtoken',
             'Content-Type':
             'application/json'}
 
@@ -94,7 +94,7 @@ class APITestCase(unittest.TestCase):
                 url_for('bootconf.get_host', hostname=data['hostname']),
                 headers=self.get_api_headers())
             self.assertTrue(response.status_code == 200)
-            json_response = json.loads(response.data.decode('utf-8'))
+            json_response = response.json
             resp_dict = json_response['data']['attributes']
             self.assertTrue(resp_dict['hostname'] == data['hostname'])
             self.assertTrue(resp_dict['hwaddress'] == data['hwaddress'])

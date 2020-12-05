@@ -1,4 +1,5 @@
 import os
+import yaml
 
 """
 Settings for motorboot app
@@ -28,7 +29,12 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
-    SECRETSFILE = os.path.abspath(os.environ.get('APPSECRETS'))
+    SECRETSFILE = os.path.abspath(os.environ.get('APPSECRETS','.secrets'))
+    if os.path.isfile(SECRETSFILE):
+        with open(SECRETSFILE) as _f:
+            TOKEN = yaml.safe_load(_f)
+    else:
+        TOKEN = {'testtoken':'testuser'}
 
     @staticmethod
     def init_app(app):
