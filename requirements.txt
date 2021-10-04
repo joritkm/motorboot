@@ -1,6 +1,6 @@
 alembic==1.6.5
 click==8.0.1
-coverage==5.5
+coverage==6.0
 Flask==2.0.1
 Flask-HTTPAuth==4.4.0
 Flask-Migrate==3.0.1
