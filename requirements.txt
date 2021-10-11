@@ -1,5 +1,5 @@
 alembic==1.6.5
-click==8.0.1
+click==8.0.3
 coverage==5.5
 Flask==2.0.1
 Flask-HTTPAuth==4.4.0
